@@ -12,6 +12,12 @@ export const Navbar = () => {
 				width="50"
 				height="50"
 			/>
+			<a href="#">
+				<h3 className="text-danger">Characters</h3>
+			</a>
+			<a href="#">
+				<h3 className="text-danger">Planets</h3>
+			</a>
 			<Dropdown className="mx-5 my-3">
 				<Dropdown.Toggle variant="success" id="dropdown-basic">
 					Favorites
