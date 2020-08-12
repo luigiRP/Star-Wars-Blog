@@ -1,8 +1,11 @@
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import PropTypes from "prop-types";
 import Card from "./card.js";
-
+import { Context } from "../store/appContext.js";
 export default function CardRow(props) {
+	const { store } = useContext(Context);
+	console.log(store.people[0]);
+
 	if (props.title == "Characters") {
 		return (
 			<Fragment>
