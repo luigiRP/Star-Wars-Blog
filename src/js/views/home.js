@@ -6,5 +6,6 @@ export const Home = () => (
 	<div className="mt-5 ml-3">
 		<CardRow title="Characters" />
 		<CardRow title="Planets" />
+		<CardRow title="Vehicles" />
 	</div>
 );

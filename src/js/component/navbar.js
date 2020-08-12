@@ -18,6 +18,9 @@ export const Navbar = () => {
 			<a href="#">
 				<h3 className="text-danger">Planets</h3>
 			</a>
+			<a href="#">
+				<h3 className="text-danger">Vehicles</h3>
+			</a>
 			<Dropdown className="mx-5 my-3">
 				<Dropdown.Toggle variant="success" id="dropdown-basic">
 					Favorites

@@ -22,7 +22,7 @@ export default function CardRow(props) {
 				</div>
 			</Fragment>
 		);
-	} else {
+	} else if (props.title == "Planets") {
 		return (
 			<Fragment>
 				<div className="container border-bottom border-danger mt-5">
@@ -35,6 +35,25 @@ export default function CardRow(props) {
 						<Card name="Endor" char1="male" char2="blond" char3="blue" />
 						<Card name="Snow" char1="male" char2="brown" char3="blue" />
 						<Card name="Earth" char1="female" char2="brown" char3="green" />
+						<Card name="Death Star" char1="male" char2="dark brown" char3="blue" />
+						<Card name="Moon" char1="n/a" char2="n/a" char3="yellow" />
+					</div>
+				</div>
+			</Fragment>
+		);
+	} else {
+		return (
+			<Fragment>
+				<div className="container border-bottom border-danger mt-5">
+					<h1 className="text-danger">
+						<strong>{props.title}</strong>
+					</h1>
+				</div>
+				<div className="container bg-white mt-2 ">
+					<div className="row p-3 box d-flex flex-nowrap">
+						<Card name="Star Killer" char1="male" char2="blond" char3="blue" />
+						<Card name="Millenium Falcon" char1="male" char2="brown" char3="blue" />
+						<Card name="Extra Spaceship" char1="female" char2="brown" char3="green" />
 						<Card name="Death Star" char1="male" char2="dark brown" char3="blue" />
 						<Card name="Moon" char1="n/a" char2="n/a" char3="yellow" />
 					</div>
