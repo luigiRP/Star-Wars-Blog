@@ -23,14 +23,17 @@ const injectContext = PassedComponent => {
 
 		useEffect(
 			() => {
-				if (state.store.starShips.length == 0) {
-					state.actions.getVehicles();
+				if (state.store.starShips.length == 0 && state.store.planets.length == 0) {
+                    state.actions.getVehicles();
+                    state.actions.getPlanets();
 				} else {
-					console.log(state.store.starShips);
+                    console.log(state.store.starShips);
+                    console.log(state.store.planets);
 				}
 			},
-			[state.store.starShips]
+			[state.store.starShips, state.store.planets]
 		);
+
 
 		// The initial value for the context is not null anymore, but the current state of this component,
 		// the context will now have a getStore, getActions and setStore functions available, because they were declared
