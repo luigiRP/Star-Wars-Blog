@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import Favorites from "./favorite.js";
 
 export default function Card(props) {
 	return (
@@ -15,9 +16,7 @@ export default function Card(props) {
 					<a href="#" className="btn btn-primary">
 						Learn more!
 					</a>
-					<button className="btn btn-danger">
-						<i className="far fa-heart" />
-					</button>
+					<Favorites />
 				</div>
 			</div>
 		</div>

@@ -66,7 +66,7 @@ export default function CardRow(props) {
 					</h1>
 				</div>
 				<div className="container bg-white mt-2 ">
-					<div className="row p-3 box d-flex flex-nowrap">
+					<div className="row p-3 box d-flex flex-nowrap ">
 						{store.starShips.map((ships, index) => {
 							return (
 								<Card

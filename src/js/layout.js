@@ -3,7 +3,8 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
-import { Demo } from "./views/demo";
+import CardRow from "./component/cardRow.js";
+import Details from "./views/details.js";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
@@ -25,14 +26,23 @@ const Layout = () => {
 						<Route exact path="/">
 							<Home />
 						</Route>
-						<Route exact path="/demo">
-							<Demo />
+						<Route exact path="/people">
+							<CardRow title="Characters" />
 						</Route>
-						<Route exact path="/single/:theid">
-							<Single />
+						<Route exact path="/planets">
+							<CardRow title="Planets" />
+						</Route>
+						<Route exact path="/starShips">
+							<CardRow title="Starships" />
+						</Route>
+						<Route path="/details">
+							<Details />
 						</Route>
 						<Route>
-							<h1>Not found!</h1>
+							<img
+								src="https://memegenerator.net/img/instances/64415524/404-error-occured-has-not-found-the-file-was.jpg"
+								alt="yoda"
+							/>
 						</Route>
 					</Switch>
 					<Footer />

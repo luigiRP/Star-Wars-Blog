@@ -5,20 +5,22 @@ import Dropdown from "react-bootstrap/Dropdown";
 export const Navbar = () => {
 	return (
 		<div className="d-flex row justify-content-between align-items-center border border-bottom bg-light">
-			<img
-				className="mx-5 my-3"
-				src="https://seeklogo.com/images/S/Star_Wars-logo-B06952A462-seeklogo.com.png"
-				alt="starWars"
-				width="50"
-				height="50"
-			/>
-			<a href="#">
+			<a href="/">
+				<img
+					className="mx-5 my-3"
+					src="https://seeklogo.com/images/S/Star_Wars-logo-B06952A462-seeklogo.com.png"
+					alt="starWars"
+					width="50"
+					height="50"
+				/>
+			</a>
+			<a href="/people">
 				<h3 className="text-danger">Characters</h3>
 			</a>
-			<a href="#">
+			<a href="/planets">
 				<h3 className="text-danger">Planets</h3>
 			</a>
-			<a href="#">
+			<a href="/Starships">
 				<h3 className="text-danger">Vehicles</h3>
 			</a>
 			<Dropdown className="mx-5 my-3">
