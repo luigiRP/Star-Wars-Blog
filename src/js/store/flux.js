@@ -33,43 +33,51 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 		actions: {
 			getVehicles: async () => {
-				let next;
+				let next = "";
+
+				const store = getStore();
 				let link = "https://swapi.dev/api/starships/?page=";
 				for (let i = 1; next !== null; i++) {
 					let response = await fetch(link.concat(i.toString()));
 					let newStarShips = await response.json();
 					next = newStarShips.next;
-					previousStarShips = getStore().starShips;
 
-					// newStarShips.results.map((ship, index) => {
-					// 	console.log(previousStarShips);
-					// });
-
-					setStore({ starShips: newStarShips.results });
+					newStarShips.results.map((ship, index) => {
+						setStore({ starShips: [...store.starShips, ship] });
+					});
 				}
 			},
 
 			getPlanets: async () => {
-				let response = await fetch("https://swapi.dev/api/planets/");
-				let newPlanets = await response.json();
-				setStore({ planets: newPlanets.results });
-			},
-			getCharacter: () => {
-				fetch("https://swapi.dev/api/people/")
-					.then(function(response) {
-						if (!response.ok) {
-							throw Error(response.statusText);
-						}
-						// Read the response as json.
-						return response.json();
-					})
-					.then(function(responseAsJson) {
-						// Do stuff with the JSON
-						setStore({ people: responseAsJson.results });
-					})
-					.catch(function(error) {
-						console.log("Looks like there was a problem: \n", error);
+				let next = "";
+
+				const store = getStore();
+				let link = "https://swapi.dev/api/planets/?page=";
+
+				for (let i = 1; next !== null; i++) {
+					let response = await fetch(link.concat(i.toString()));
+					let newStarShips = await response.json();
+					next = newStarShips.next;
+
+					newStarShips.results.map((ship, index) => {
+						setStore({ planets: [...store.planets, ship] });
 					});
+				}
+			},
+			getCharacter: async () => {
+				let next = "";
+				const store = getStore();
+				let link = "https://swapi.dev/api/people/?page=";
+
+				for (let i = 1; next !== null; i++) {
+					let response = await fetch(link.concat(i.toString()));
+					let newStarShips = await response.json();
+					next = newStarShips.next;
+
+					newStarShips.results.map((ship, index) => {
+						setStore({ people: [...store.people, ship] });
+					});
+				}
 			},
 			setDetails: (name, char1, char2, char3, char4, char5, title1, title2, title3, title4, title5, img) => {
 				setStore({
