@@ -20,9 +20,16 @@ export default function CardRow(props) {
 								<Card
 									key={index}
 									name={person.name}
-									char1={"Eye Color: " + person.eye_color}
-									char2={"Mass: " + person.mass}
-									char3={"Gender: " + person.gender}
+									title1="Eye Color"
+									title2="Mass"
+									title3="Gender"
+									title4="Skin Color"
+									title5="Birth Year"
+									char1={person.eye_color}
+									char2={person.mass}
+									char3={person.gender}
+									char4={person.skin_color}
+									char5={person.birth_year}
 									img="https://super-ficcion.com/wp-content/uploads/2020/03/Portada-1-987x627.jpg"
 								/>
 							);
@@ -46,9 +53,16 @@ export default function CardRow(props) {
 								<Card
 									key={index}
 									name={planet.name}
-									char1={"Terrain: " + planet.terrain}
-									char2={"Population: " + planet.population}
-									char3={"Diameter: " + planet.diameter}
+									title1="Terrain"
+									title2="Population"
+									title3="Diameter"
+									title4="Orbital Period"
+									title5="Climate"
+									char1={planet.terrain}
+									char2={planet.population}
+									char3={planet.diameter}
+									char4={planet.orbital_period}
+									char5={planet.climate}
 									img="https://d2cdo4blch85n8.cloudfront.net/wp-content/uploads/2019/08/Planet-with-Three-Suns-Discovered-Featured-image.jpg"
 								/>
 							);
@@ -72,9 +86,16 @@ export default function CardRow(props) {
 								<Card
 									key={index}
 									name={ships.name}
-									char1={"Passengers: " + ships.passengers}
-									char2={"Speed: " + ships.max_atmosphering_speed}
-									char3={"Class: " + ships.starship_class}
+									title1="Passengers"
+									title2="Speed"
+									title3="Class"
+									title4="Cost"
+									title5="Length"
+									char1={ships.passengers}
+									char2={ships.max_atmosphering_speed}
+									char3={ships.starship_class}
+									char4={ships.cost_in_credits}
+									char5={ships.length}
 									img="https://www.homewallmurals.co.uk/ekmps/shops/allwallpapers/images/star-wars-starships-paper-wallpaper-[2]-5084-p.jpg"
 								/>
 							);

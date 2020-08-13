@@ -3,7 +3,7 @@ import CardRow from "../component/cardRow.js";
 import "../../styles/home.scss";
 
 export const Home = () => (
-	<div className="mt-5 ml-3">
+	<div className="container-fluid">
 		<CardRow title="Characters" />
 		<CardRow title="Planets" />
 		<CardRow title="Vehicles" />
