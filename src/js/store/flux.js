@@ -33,9 +33,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 		actions: {
 			getVehicles: async () => {
-				let response = await fetch("https://swapi.dev/api/starships/");
-				let newStarShips = await response.json();
-				setStore({ starShips: newStarShips.results });
+				let next;
+				let link = "https://swapi.dev/api/starships/?page=";
+				for (let i = 1; next !== null; i++) {
+					let response = await fetch(link.concat(i.toString()));
+					let newStarShips = await response.json();
+					next = newStarShips.next;
+					previousStarShips = getStore().starShips;
+
+					// newStarShips.results.map((ship, index) => {
+					// 	console.log(previousStarShips);
+					// });
+
+					setStore({ starShips: newStarShips.results });
+				}
 			},
 
 			getPlanets: async () => {
