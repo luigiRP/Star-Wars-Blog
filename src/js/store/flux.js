@@ -1,11 +1,28 @@
+import { checkPropTypes } from "prop-types";
+
 const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			starShips: [],
 			planets: [],
-			people: []
+			people: [],
+			favorites: []
 		},
 		actions: {
+			deleteLike: props => {
+				let listLike = [];
+
+				for (let i = 0; i < getStore().favorites.length; i++) {
+					if (props != getStore().favorites[i]) {
+						listLike.push(getStore().favorites[i]);
+					}
+				}
+				setStore({ favorites: listLike });
+			},
+			like: props => {
+				if (!getStore().favorites.includes(props)) setStore({ favorites: [...getStore().favorites, props] });
+			},
+
 			getVehicles: async () => {
 				let response = await fetch("https://swapi.dev/api/starships/");
 				let newStarShips = await response.json();

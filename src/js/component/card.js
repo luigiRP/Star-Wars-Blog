@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import Favorites from "./favorite.js";
+import Favorite from "./favorite.js";
+import { Context } from "../store/appContext.js";
 
 export default function Card(props) {
 	return (
@@ -16,7 +17,7 @@ export default function Card(props) {
 					<a href="#" className="btn btn-primary">
 						Learn more!
 					</a>
-					<Favorites />
+					<Favorite nameFav={props.name} />
 				</div>
 			</div>
 		</div>

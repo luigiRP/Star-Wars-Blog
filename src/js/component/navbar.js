@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import Dropdown from "react-bootstrap/Dropdown";
-
+import { Context } from "../store/appContext";
 export const Navbar = () => {
+	const { store, actions } = useContext(Context);
+
 	return (
 		<div className="d-flex row justify-content-between align-items-center border border-bottom bg-light">
 			<a href="/">
@@ -29,15 +31,19 @@ export const Navbar = () => {
 				</Dropdown.Toggle>
 
 				<Dropdown.Menu>
-					<Dropdown.Item href="#/action-1">
-						Luke <i className="fas fa-trash ml-3" />
-					</Dropdown.Item>
-					<Dropdown.Item href="#/action-2">
-						Vader <i className="fas fa-trash ml-3" />
-					</Dropdown.Item>
-					<Dropdown.Item href="#/action-3">
-						R2D2 <i className="fas fa-trash ml-3" />
-					</Dropdown.Item>
+					{store.favorites.map((variable, index) => {
+						return (
+							<Dropdown.Item key={index} href="#/action-3">
+								{variable}
+								<i
+									onClick={() => {
+										actions.deleteLike(variable);
+									}}
+									className="fas fa-trash ml-3"
+								/>
+							</Dropdown.Item>
+						);
+					})}
 				</Dropdown.Menu>
 			</Dropdown>
 		</div>
