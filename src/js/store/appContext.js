@@ -33,7 +33,7 @@ const injectContext = PassedComponent => {
 					state.actions.getCharacter();
 				}
 			},
-			[state.store.starShips, state.store.planets, state.store.people]
+			[state.store.starShips, state.store.planets, state.store.people, state.store.details]
 		);
 
 		// The initial value for the context is not null anymore, but the current state of this component,
