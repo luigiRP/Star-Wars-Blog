@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
@@ -15,11 +15,10 @@ import { Footer } from "./component/footer";
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
 	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
-	const basename = process.env.BASENAME || "";
 
 	return (
 		<div className="d-flex flex-column h-100">
-			<BrowserRouter basename={basename}>
+			<Router basename={process.env.PUBLIC_URL}>
 				<ScrollToTop>
 					<Navbar />
 					<Switch>
@@ -46,7 +45,7 @@ const Layout = () => {
 						</Route>
 					</Switch>
 				</ScrollToTop>
-			</BrowserRouter>
+			</Router>
 		</div>
 	);
 };
