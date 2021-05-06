@@ -11,6 +11,8 @@ import "../styles/index.scss";
 
 //import your own components
 import Layout from "./layout";
+import "core-js/stable";
+import "regenerator-runtime/runtime";
 
 //render your react application
 ReactDOM.render(
