@@ -1,5 +1,5 @@
 import React from "react";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Home } from "./views/home";
@@ -18,7 +18,7 @@ const Layout = () => {
 
 	return (
 		<div className="d-flex flex-column h-100">
-			<Router basename={process.env.BASENAME}>
+			<HashRouter basename={process.env.BASENAME}>
 				<ScrollToTop>
 					<Navbar />
 					<Switch>
@@ -45,7 +45,7 @@ const Layout = () => {
 						</Route>
 					</Switch>
 				</ScrollToTop>
-			</Router>
+			</HashRouter>
 		</div>
 	);
 };
