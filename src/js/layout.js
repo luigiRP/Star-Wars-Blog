@@ -15,10 +15,10 @@ import { Footer } from "./component/footer";
 const Layout = () => {
 	//the basename is used when your project is published in a subdirectory and not in the root of the domain
 	// you can set the basename on the .env file located at the root of this project, E.g: BASENAME=/react-hello-webapp/
-
+	console.log(process.env.BASENAME);
 	return (
 		<div className="d-flex flex-column h-100">
-			<Router basename={process.env.PUBLIC_URL}>
+			<Router basename={process.env.BASENAME}>
 				<ScrollToTop>
 					<Navbar />
 					<Switch>
